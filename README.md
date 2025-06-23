@@ -11,7 +11,7 @@ Manage your daily tasks efficiently — add, complete, and delete with ease.
 ## 📸 Preview
 
 ![To-Do App Screenshot](https://user-images.githubusercontent.com/00000000/00000000-00000000-0000-000000000000.png)  
-<sub>*Add a real screenshot or remove this section if needed*</sub>
+
 
 ---
 
