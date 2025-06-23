@@ -1,16 +1,42 @@
-# LGMVIP-Web-Task-Number-1
-# To-Do List App
+# 📝 To-Do List App  
+### 🚀 LGMVIP Web Development Task – 1
 
-This is a straightforward to-do list application written in JavaScript, HTML, and CSS.
+A clean, responsive, and interactive **To-Do List** web app built using **HTML, CSS, and JavaScript**.  
+Manage your daily tasks efficiently — add, complete, and delete with ease.
 
+🌐 **Live Demo**: [Click to View App](https://nehaatomar.github.io/LGMVIP-Web-Task-Number-1/)
 
-## Features
+---
 
-- Compile a list of new tasks.
-- It is possible to mark tasks as finished.
-- Design that responds.
+## 📸 Preview
 
-## How to Apply
+![To-Do App Screenshot](https://user-images.githubusercontent.com/00000000/00000000-00000000-0000-000000000000.png)  
+<sub>*Add a real screenshot or remove this section if needed*</sub>
 
-1. Use `git clone https://github.com/your-username/to-do-list.git` to clone the repository.
-2. Launch the webpage `index.html` in your browser
+---
+
+## 🔥 Features
+
+✅ Add new tasks instantly  
+✅ Mark tasks as completed  
+✅ Delete finished or unwanted tasks  
+✅ Fully responsive design — mobile-friendly  
+✅ Clean UI with simple UX
+
+---
+
+## 🛠️ Tech Stack
+
+| HTML5 | CSS3 | JavaScript |
+|:-----:|:----:|:----------:|
+| 🧱    | 🎨   | ⚙️         |
+
+---
+
+## 🚀 Getting Started
+
+Clone the project and run it locally:
+
+```bash
+git clone https://github.com/NehaaTomar/LGMVIP-Web-Task-Number-1.git
+cd LGMVIP-Web-Task-Number-1
