@@ -1,36 +1,52 @@
-function Todo() {
-  var list= storeTodos();
+// Load todos when page loads
+document.addEventListener("DOMContentLoaded", function () {
+  renderTodos();
+});
 
-  var l = '<ul>';
-  for (i = 0; i < list.length; i++){
-    l += '<li><span class="todoItem">' + list[i] + '</span><a href="#" class="deleteItems"> x</a>' + '</li>';
-  };
-  l += '</ul>';
+function getTodos() {
+  return JSON.parse(localStorage.getItem("todo")) || [];
+}
 
-  document.getElementById('items').innerHTML = l;
-  var items = document.getElementsByClassName('todoItem');
+function saveTodos(todos) {
+  localStorage.setItem("todo", JSON.stringify(todos));
+}
 
-  for (i = 0; i < items.length; i++) {
-    var clicked = false;
-    items[i].addEventListener('click', clickhandler);
-    items[i].id = 'items-' + i;
-    id = items[i].id;
+function renderTodos() {
+  const todos = getTodos();
+  const ul = document.getElementById("todoList");
+  ul.innerHTML = ""; // Clear previous list
+
+  todos.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="todoItem">${item}</span>
+                    <a href="#" class="deleteItems" data-index="${index}"> x</a>`;
+    ul.appendChild(li);
+  });
+
+  // Delete handlers
+  document.querySelectorAll(".deleteItems").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const index = this.getAttribute("data-index");
+      const todos = getTodos();
+      todos.splice(index, 1);
+      saveTodos(todos);
+      renderTodos();
+    });
+  });
+}
+
+function addTodo() {
+  const input = document.getElementById("myInput");
+  const newItem = input.value.trim();
+
+  if (newItem) {
+    const todos = getTodos();
+    todos.push(newItem);
+    saveTodos(todos);
+    input.value = "";
+    renderTodos();
+  } else {
+    alert("Please enter a task!");
   }
-
-    var deletes = document.getElementsByClassName('deleteItems');
-    for (i = 0; i < deletes.length; i++) {
-      deletes[i].addEventListener('click', remove);
-    };
-}
-
-function remove(deletes) {
-var clicks = true;
-if (clicks) {
-  console.log(id);
-  var todos = storeTodos();
-  todos.splice(id, 1);
-  localStorage.setItem('todo', JSON.stringify(todos));
-  Todo();
-  return false;
-}
 }
